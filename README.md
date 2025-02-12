@@ -1,30 +1,54 @@
-# Setting up Circle React Elements and SDK in Next.js
+# Circle React Elements and Developer Controlled Wallet SDK with Next.js Tutorial
 
-Install latest next.js
+This guide will walk you through setting up a Next.js project with Circle Elements, a UI library for building web3 applications. You'll learn how to integrate Circle's Developer Controlled Wallets SDK and create your first blockchain-enabled application.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- Node.js 18 or later installed
+- A Circle account and API key (get one at [Circle's Developer Console](https://console.circle.com))
+- Basic familiarity with React and TypeScript
+
+## Getting Started
+
+### 1. Create a New Next.js Project
+
+First, create a new Next.js project with TypeScript and Tailwind CSS:
 
 ```bash
 npx create-next-app@latest
 ```
 
-Upgrade tailwindcss to v4
+When prompted, enable TypeScript and Tailwind CSS support.
+
+### 2. Update Dependencies
+
+#### Upgrade Tailwind CSS to v4 (required for Circle Elements)
 
 ```bash
 npx @tailwindcss/upgrade@next
 ```
 
-Install circle elements and its peer dependencies
+#### Install Circle Elements and Required Dependencies
 
 ```bash
 npm install @circle-libs/react-elements @circle-fin/developer-controlled-wallets lucide-react react-hook-form
 ```
 
-Configure the app to work with Circle SDK, this will create a .env file with secrets
+### 3. Configure Circle SDK
+
+Run the Circle SDK setup utility and provide your API key:
 
 ```bash
 npx @circle-libs/sdk-setup --api-key YOUR_CIRCLE_API_KEY
 ```
 
-Import Elements CSS configuration in `globals.css`
+This will create a `.env` file with your Circle API credentials. Keep these secure and never commit them to version control.
+
+### 4. Set Up Styles
+
+Add Circle Elements styles to your global CSS. Open `src/app/globals.css` and add:
 
 ```css
 @import "tailwindcss";
@@ -32,12 +56,18 @@ Import Elements CSS configuration in `globals.css`
 
 @custom-variant dark (&:is(.dark *));
 
-/* rest of the file */
+/* Your existing global styles below */
 ```
 
-Initialize the Circle SDK on the server side. Create a new file `src/libs/circle-sdk.server.ts` and add the following code. It's important that the API key and secret are not exposed to the client side.
+## Implementation
 
-```ts
+### 1. Initialize Circle SDK
+
+Create a server-side SDK initialization file. This keeps your API credentials secure by only using them on the server.
+
+Create `src/libs/circle-sdk.server.ts`:
+
+```typescript
 import { initiateDeveloperControlledWalletsClient } from "@circle-fin/developer-controlled-wallets";
 
 export const getCircleSDK = () => {
@@ -48,9 +78,13 @@ export const getCircleSDK = () => {
 };
 ```
 
-Setup your first API endpoint and use the Circle SDK instance to fetch some data. Create a new file `src/pages/api/wallet-sets/route.ts` and add the following code.
+### 2. Create an API Endpoint
 
-```ts
+Set up an endpoint to interact with Circle's API. This example fetches wallet sets.
+
+Create `src/app/api/wallet-sets/route.ts`:
+
+```typescript
 import { NextResponse } from "next/server";
 import { getCircleSDK } from "@/libs/circle-sdk.server";
 
@@ -75,9 +109,13 @@ export async function GET() {
 }
 ```
 
-Now build a client page to fetch the data from the API endpoint. Create a new file `src/wallet-sets/page.tsx` and add the following code.
+### 3. Build the Frontend
 
-```tsx
+Create a page to display wallet sets using Circle Elements components.
+
+Create `src/app/wallet-sets/page.tsx`:
+
+```typescript
 "use client";
 
 import { useEffect, useState } from "react";
@@ -156,3 +194,19 @@ export default function WalletSets() {
   );
 }
 ```
+
+## Important Notes
+
+1. **Client-Side Components**: When using Circle Elements always create them as client components by adding `"use client";` at the top of your component file.
+
+2. **Environment Variables**: Keep your Circle API credentials in `.env` and never expose them to the client side. Always interact with the Circle SDK through server-side API routes.
+
+3. **Error Handling**: Implement proper error handling for API calls and display appropriate feedback to users.
+
+4. **TypeScript Support**: Circle Elements comes with built-in TypeScript types. Use them to ensure type safety in your application.
+
+## Next Steps
+
+- [Circle Developer-Controlled Wallet Quickstart](https://developers.circle.com/w3s/developer-controlled-wallet-quickstart)
+- [@circle-libs/react-elements GitHub Repository](https://github.com/ChainSafe/web3-circle-libs)
+- [@circle-libs/react-elements Documentation](https://chainsafe.github.io/web3-circle-libs/)
