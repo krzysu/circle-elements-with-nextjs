@@ -15,15 +15,16 @@
     axios "^1.6.2"
 
 "@circle-libs/react-elements@^0.0.1-beta.2":
-  version "0.0.1-beta.2"
-  resolved "https://registry.yarnpkg.com/@circle-libs/react-elements/-/react-elements-0.0.1-beta.2.tgz#ddd048eee82c7aceb15bb6edac57d32280e7aeda"
-  integrity sha512-ZejKpemYVUuhYbykt4FHvu6vBd6cAGv3EvPMaSMje0Lx3OAqPo/PK+60gyXK7UrfIisbDRco/O9PrYcsp48M4w==
+  version "0.0.1-beta.3"
+  resolved "https://registry.yarnpkg.com/@circle-libs/react-elements/-/react-elements-0.0.1-beta.3.tgz#e165107c1086fe963dda68bd1b2efb44a57bc232"
+  integrity sha512-eMcPCHPeTI5c7m+N0c4aO1n18J+7PUo1yGmJGmq87Qf88WsbUqi/SNnzxzonvDdQluGEtgbWUypxLPHfWAIvfw==
   dependencies:
     "@hookform/resolvers" "^3.10.0"
     "@radix-ui/react-dialog" "^1.1.2"
     "@radix-ui/react-label" "^2.1.0"
     "@radix-ui/react-select" "^2.1.2"
     "@radix-ui/react-slot" "^1.1.0"
+    "@web3icons/react" "^4.0.0"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
     ethereum-blockies-base64 "^1.0.2"
@@ -815,6 +816,19 @@
   dependencies:
     "@typescript-eslint/types" "8.24.0"
     eslint-visitor-keys "^4.2.0"
+
+"@web3icons/common@0.11.6":
+  version "0.11.6"
+  resolved "https://registry.yarnpkg.com/@web3icons/common/-/common-0.11.6.tgz#ce26c2b4152cd6dd2a42fafe4fc9d4bead08ef52"
+  integrity sha512-3Y+ImXPbn3f4x0EiEiqBjbzExmDgY2N05cHSRCzC9iLQwYVAFmHHGg+C1jWiM0PzKR2vq4A4ZwMTYQTSS0CJxA==
+
+"@web3icons/react@^4.0.0":
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@web3icons/react/-/react-4.0.7.tgz#3cd0df7b90102ba9703aec1648860e64753df2c2"
+  integrity sha512-Jz20iAr+fwEMkxKQbjq8N/6jvPVzY96QM4E47hDKOsIGsOHOybXA8BybCH59EZIe88yAQ1TYt5xnn0+qNJnsjQ==
+  dependencies:
+    "@web3icons/common" "0.11.6"
+    react "^18.2.0"
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -2248,7 +2262,7 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-loose-envify@^1.4.0:
+loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -2584,6 +2598,13 @@ react-style-singleton@^2.2.2, react-style-singleton@^2.2.3:
   dependencies:
     get-nonce "^1.0.0"
     tslib "^2.0.0"
+
+react@^18.2.0:
+  version "18.3.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-18.3.1.tgz#49ab892009c53933625bd16b2533fc754cab2891"
+  integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
+  dependencies:
+    loose-envify "^1.1.0"
 
 react@^19.0.0:
   version "19.0.0"

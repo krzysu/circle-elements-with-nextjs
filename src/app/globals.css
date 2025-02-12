@@ -1,4 +1,7 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@import "@circle-libs/react-elements/styles.css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-background: var(--background);
