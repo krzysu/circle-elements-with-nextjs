@@ -14,7 +14,7 @@
   dependencies:
     axios "^1.6.2"
 
-"@circle-libs/react-elements@^0.0.1-beta.2":
+"@circle-libs/react-elements@^0.0.1-beta.3":
   version "0.0.1-beta.3"
   resolved "https://registry.yarnpkg.com/@circle-libs/react-elements/-/react-elements-0.0.1-beta.3.tgz#e165107c1086fe963dda68bd1b2efb44a57bc232"
   integrity sha512-eMcPCHPeTI5c7m+N0c4aO1n18J+7PUo1yGmJGmq87Qf88WsbUqi/SNnzxzonvDdQluGEtgbWUypxLPHfWAIvfw==
