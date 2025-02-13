@@ -24,16 +24,16 @@ When prompted, enable TypeScript and Tailwind CSS support.
 
 ### 2. Update Dependencies
 
-#### Upgrade Tailwind CSS to v4 (required for Circle Elements)
+Upgrade Tailwind CSS to v4 (required for Circle Elements)
 
 ```bash
 npx @tailwindcss/upgrade@next
 ```
 
-#### Install Circle Elements and Required Dependencies
+Install Circle Elements and Required Dependencies
 
 ```bash
-npm install @circle-libs/react-elements @circle-fin/developer-controlled-wallets lucide-react react-hook-form
+npm install @circle-libs/react-elements @circle-fin/developer-controlled-wallets lucide-react
 ```
 
 ### 3. Configure Circle SDK
@@ -204,9 +204,3 @@ export default function WalletSets() {
 3. **Error Handling**: Implement proper error handling for API calls and display appropriate feedback to users.
 
 4. **TypeScript Support**: Circle Elements comes with built-in TypeScript types. Use them to ensure type safety in your application.
-
-## Next Steps
-
-- [Circle Developer-Controlled Wallet Quickstart](https://developers.circle.com/w3s/developer-controlled-wallet-quickstart)
-- [@circle-libs/react-elements GitHub Repository](https://github.com/ChainSafe/web3-circle-libs)
-- [@circle-libs/react-elements Documentation](https://chainsafe.github.io/web3-circle-libs/)
