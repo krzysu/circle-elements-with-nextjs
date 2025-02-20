@@ -8,7 +8,7 @@ import {
 } from "@circle-libs/react-elements";
 
 interface CreateWalletSetProps {
-  onSuccess: () => void;
+  onSuccess?: () => void;
 }
 
 interface ApiResponse {
@@ -19,8 +19,10 @@ interface ApiResponse {
 
 export function CreateWalletSet({ onSuccess }: CreateWalletSetProps) {
   const [error, setError] = useState<Error | undefined>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleCreateWalletSet = async (formData: NewWalletSetFormInput) => {
+    setIsSubmitting(true);
     try {
       setError(undefined);
       const response = await fetch("/api/wallet-sets", {
@@ -40,16 +42,24 @@ export function CreateWalletSet({ onSuccess }: CreateWalletSetProps) {
         );
       }
 
-      onSuccess();
+      if (typeof onSuccess === "function") {
+        onSuccess();
+      }
     } catch (err) {
       setError(err instanceof Error ? err : new Error("An error occurred"));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="border rounded p-4 bg-white">
+    <div className="border rounded p-4">
       <h2 className="text-lg font-semibold mb-4">Create New Wallet Set</h2>
-      <NewWalletSetForm onSubmit={handleCreateWalletSet} serverError={error} />
+      <NewWalletSetForm
+        onSubmit={handleCreateWalletSet}
+        serverError={error}
+        isSubmitting={isSubmitting}
+      />
     </div>
   );
 }
