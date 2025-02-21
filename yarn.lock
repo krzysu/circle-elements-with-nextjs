@@ -14,10 +14,10 @@
   dependencies:
     axios "^1.6.2"
 
-"@circle-libs/react-elements@^0.0.1-beta.4":
-  version "0.0.1-beta.4"
-  resolved "https://registry.yarnpkg.com/@circle-libs/react-elements/-/react-elements-0.0.1-beta.4.tgz#f286ec8301e9a9b404b391080d669bf0cf26d368"
-  integrity sha512-fk8FyvXhy/O5LothA9Ao2FgcEwom80Fqdbwsdvu/9tDb+hu7+UerIghANGzv7gkwklpLOioJOFQ/BSXoECnSHQ==
+"@circle-libs/react-elements@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@circle-libs/react-elements/-/react-elements-0.1.0.tgz#529d729e59d69d2ecb9da8ced6b8b5b2b0c4466d"
+  integrity sha512-Sqk2MBXHPxPLV1JgTU+/xB5aglBzRNlsaKQDKnGDrnJBCqdoJv1QNG5NwKDHy2y34p5le5BWzGR7ry5FMZdfow==
   dependencies:
     "@hookform/resolvers" "^3.10.0"
     "@radix-ui/react-dialog" "^1.1.2"
