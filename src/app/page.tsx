@@ -5,6 +5,7 @@ import {
   ElementsWalletSet,
   WalletSetDetails,
 } from "@circle-libs/react-elements";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 interface ApiResponse {
@@ -63,7 +64,14 @@ export default function WalletSets() {
             <div className="space-y-4">
               {walletSets.map((walletSet) => (
                 <div key={walletSet.id} className="border rounded p-4">
-                  <WalletSetDetails walletSet={walletSet} />
+                  <WalletSetDetails walletSet={walletSet}>
+                    <Link
+                      href={`/wallets/${walletSet.id}`}
+                      className="text-blue-500 hover:underline"
+                    >
+                      Show Wallets
+                    </Link>
+                  </WalletSetDetails>
                 </div>
               ))}
             </div>
